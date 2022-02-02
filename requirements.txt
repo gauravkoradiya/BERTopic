@@ -1,3 +1,4 @@
 streamlit==1.4.0
 bertopic
 datasets
+numpy==1.21.1
