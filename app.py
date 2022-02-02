@@ -26,7 +26,7 @@ form.header("Main Settings")
 #form.image("https://maartengr.github.io/BERTopic/img/algorithm.png", width = 270)
 
 
-dataset_name = form.text_area("Enter the name of the huggingface Dataset to do analysis of:", value = "Hellisotherpeople/DebateSum")
+dataset_name = form.text_area("Enter the name of the huggingface dataset to do analysis of:", value = "Hellisotherpeople/DebateSum")
 dataset_name_2 = form.text_area("Enter the name of the config for the dataset if it has one", value = "")
 split_name = form.text_area("Enter the name of the split of the dataset that you want to use", value = "train")
 number_of_records = form.number_input("Enter the number of documents that you want to analyze from the dataset", value = 200)
@@ -43,6 +43,7 @@ form.header("BERTopic Settings")
 use_topic_reduction = form.selectbox("How do you want to handle topic reduction", ["HDBScan", "Auto", "Manual"])
 form.caption("Leave this if you want HDBScan to choose the number of topics (clusters) for you. Set to Auto to have BERTopic prune these topics further, set to Manual to specify the number yourself")
 number_of_topics = form.number_input("Enter the number of topics to use if doing Manual topic reduction", value = 3)
+use_random_seed = form.checkbox("Do you want to make the results reproducible? This significantly slows down BERTopic", value = False)
 
 
 form.header("CounterVectorizer Settings")
@@ -103,7 +104,10 @@ def load_and_process_data(path, name, streaming, split_name, number_of_records):
 
 
 hdbscan_model = HDBSCAN(min_cluster_size=hdbscan_min_cluster_size, min_samples = hdbscan_min_samples, metric=hdbscan_metric, prediction_data=True)
-umap_model = UMAP(n_neighbors=umap_n_neighbors, n_components=umap_n_components, min_dist=umap_min_dist, metric=umap_metric, random_state = 42)
+if use_random_seed:
+    umap_model = UMAP(n_neighbors=umap_n_neighbors, n_components=umap_n_components, min_dist=umap_min_dist, metric=umap_metric, random_state = 42)
+else:
+    umap_model = UMAP(n_neighbors=umap_n_neighbors, n_components=umap_n_components, min_dist=umap_min_dist, metric=umap_metric)
 vectorizer_model = CountVectorizer(lowercase = cv_lowercase, ngram_range=(cv_ngram_min, cv_ngram_max), analyzer=cv_analyzer, max_df=cv_max_df, min_df=cv_min_df, stop_words="english")
 
 
