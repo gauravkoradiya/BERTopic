@@ -3,5 +3,4 @@ bertopic
 datasets
 pandas
 umap-learn
-hdbscan
 sentence-transformers
