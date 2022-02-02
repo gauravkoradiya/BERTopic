@@ -2,3 +2,4 @@ streamlit
 bertopic
 datasets
 numpy==1.22.1
+pandas
