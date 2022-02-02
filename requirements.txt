@@ -4,3 +4,4 @@ datasets
 pandas
 umap-learn
 sentence-transformers
+numpy
