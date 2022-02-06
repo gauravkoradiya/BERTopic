@@ -42,7 +42,7 @@ form.caption("See the list of pre-trained models that are available here! https:
 form.header("BERTopic Settings")
 use_topic_reduction = form.selectbox("How do you want to handle topic reduction", ["HDBScan", "Auto", "Manual"])
 form.caption("Leave this if you want HDBScan to choose the number of topics (clusters) for you. Set to Auto to have BERTopic prune these topics further, set to Manual to specify the number yourself")
-number_of_topics = form.number_input("Enter the number of topics to use if doing Manual topic reduction", value = 3)
+number_of_topics = form.number_input("Enter the number of topics to use if doing Manual topic reduction", value = 4)
 use_random_seed = form.checkbox("Do you want to make the results reproducible? This significantly slows down BERTopic", value = False)
 
 
