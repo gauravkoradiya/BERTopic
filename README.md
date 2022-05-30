@@ -7,7 +7,6 @@ sdk: streamlit
 app_file: app.py
 pinned: false
 license: mit
-sdk_version: 1
 ---
 
 # Configuration
