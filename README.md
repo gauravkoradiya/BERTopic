@@ -4,10 +4,10 @@ emoji: 🐨
 colorFrom: gray
 colorTo: gray
 sdk: streamlit
-sdk_version: 1.0
 app_file: app.py
 pinned: false
 license: mit
+sdk_version: 1.0
 ---
 
 # Configuration
