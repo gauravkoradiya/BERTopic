@@ -1,6 +1,6 @@
 ---
 title: HF BERTopic
-emoji: 🐨
+emoji: 🅱️ 🇪 🇷 🇹
 colorFrom: gray
 colorTo: gray
 sdk: streamlit
