@@ -163,7 +163,7 @@ with st.expander("Open to see Representitive docs for each topic"):
 if labels:
     y = df[labels_column_name]
     st.header("Topics per class")
-    topics_per_class = model.topics_per_class(X, topics, classes=y)
+    topics_per_class = model.topics_per_class(X, classes=y)
     st.plotly_chart(model.visualize_topics_per_class(topics_per_class))
 #TODO:Each of these need there own options!
 
