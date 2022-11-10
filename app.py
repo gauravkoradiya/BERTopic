@@ -62,9 +62,9 @@ cv_max_features = form.number_input("Enter the maximum number of n-grams to be f
 
 
 form.header("HDBScan Settings")
-hdbscan_min_cluster_size = form.number_input("Enter the number of points necessary to form a new cluster", value = 5)
+hdbscan_min_cluster_size = form.number_input("Enter the number of points necessary to form a new cluster", value = 3)
 form.caption("Set it to the smallest size grouping that you wish to consider a cluster. This is the most impactful setting for HDBscan")
-hdbscan_min_samples = form.number_input("Enter the minimum number of points to be declared a cluster instead of noise", value = 3)
+hdbscan_min_samples = form.number_input("Enter the minimum number of points to be declared a cluster instead of noise", value = 2)
 form.caption("The larger the value of min_samples you provide, the more conservative the clustering – more points will be declared as noise, and clusters will be restricted to progressively more dense areas.")
 hdbscan_metric = form.text_area("Enter the name of the metric used for computing distances for HDBscan. Common metrics for NLP are euclidean and cosine. Cosine is not supported by HDBscan", value = "euclidean")
 
