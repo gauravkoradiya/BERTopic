@@ -8,9 +8,9 @@ from umap import UMAP
 from hdbscan import HDBSCAN
 from sklearn.feature_extraction.text import CountVectorizer
 
-st.set_page_config(page_title="HF-BERTopic")
-st.title("HF-BERTopic A front end for BERTopic")
-st.caption("By Allen Roush")
+st.set_page_config(page_title="Demo", page_icon=":shark:", layout="wide")
+st.title("Topic Modeling with BERTopic")
+st.caption("By Gaurav Koradiya (016587129)")
 st.caption("github: https://github.com/Hellisotherpeople")
 st.caption("Linkedin: https://www.linkedin.com/in/allen-roush-27721011b/")
 st.image("https://raw.githubusercontent.com/MaartenGr/BERTopic/master/images/logo.png", width = 380)
