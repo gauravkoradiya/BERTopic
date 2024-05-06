@@ -11,7 +11,6 @@ from hdbscan import HDBSCAN
 from sklearn.feature_extraction.text import CountVectorizer
 import time
 
-
 st.set_page_config(page_title="Demo", page_icon=":shark:", layout="wide")
 st.title("Topic Modeling with BERTopic")
 st.caption("ISE 244: Final Project")
@@ -143,7 +142,10 @@ with traning_tab:
         with st.spinner('Training the model...'):
             topics, probs = model.fit_transform(X)
             st.success('Training Completed Successfully!!')
-            model_path = os.path.join("models", "bertopic_model_{0}_{1}_{2}.pkl".format(dataset_name, model_name, time.strftime("%Y%m%d-%H%M%S")))
+            #remove / from dataset name
+            dataset_name_for_path = dataset_name.replace("/", "_")
+            os.makedirs(os.path.join('models',dataset_name_for_path), exist_ok=True)
+            model_path = os.path.join("models", dataset_name_for_path ,"bertopic_model_{0}_{1}_{2}.pkl".format(dataset_name_for_path, model_name, time.strftime("%Y%m%d-%H%M%S")))
             model.save(path=model_path)
             st.session_state.model = model
             st.success("Model has been saved at `{0}`".format(model_path))
