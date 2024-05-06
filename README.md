@@ -1,4 +1,4 @@
----
+<!-- ---
 title: HF BERTopic
 emoji: 🅱️ 🇪 🇷 🇹
 colorFrom: gray
@@ -43,4 +43,27 @@ HF dataset IDs (like "common_voice" or "oscar-corpus/OSCAR-2109") used in the Sp
 Will be parsed automatically from your code if not specified here.
 
 `pinned`: _boolean_
-Whether the Space stays on top of your list.
+Whether the Space stays on top of your list. -->
+
+# Topic Modeling with BERTopic
+## Introduction
+BERTopic is a topic modeling technique that leverages BERT embeddings to create dense clusters allowing for easily interpretable topics. This Space demonstrates how to use BERTopic to create topics from a given text dataset.
+
+## How to use
+1. Clone the repository.
+
+    ```git clone https://github.com/gauravkoradiya/BERTopic.git```
+
+2. Install the requirements
+
+    ```pip install -r requirements.txt```
+
+3. Run the app.py file
+
+    ```streamlit run app.py```
+
+
+## Acknowledgements
+- [BERTopic](https://maartengr.github.io/BERTopic/index.html)
+- [Hugging Face](https://huggingface.co/)
+- [Streamlit](https://streamlit.io/)
